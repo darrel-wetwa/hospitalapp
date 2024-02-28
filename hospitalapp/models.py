@@ -27,12 +27,11 @@ class Member(models.Model):
 
     def __str__(self):
         return self.username
-
-class Contact(models.Model):
+class Message(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField()
     subject = models.CharField(max_length=200)
-    message = models.CharField(max_length=200)
+    message = models.TextField()
 
     def __str__(self):
-        return self.Contact
+        return self.name + self.subject
